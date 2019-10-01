@@ -20,7 +20,7 @@ import hashlib
 
 import torch
 
-from pytorch_pretrained_bert import BertModel, BertConfig
+from pytorch_pretrained_bert import BertModel, BertConfig, BertForQuestionAnswering
 import gluonnlp as nlp
 
 from .utils import download as _download
@@ -82,3 +82,4 @@ def get_kobert_model(model_file, vocab_file, ctx="cpu"):
     vocab_b_obj = nlp.vocab.BERTVocab.from_json(
         open(vocab_file, 'rt').read())
     return bertmodel, vocab_b_obj
+
